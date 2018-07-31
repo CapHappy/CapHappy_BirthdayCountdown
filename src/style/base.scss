@@ -11,7 +11,7 @@ $font-mont: "Montserrat";
     width:100vw;
     display: grid;
     grid-template-rows: repeat(5, minmax(200px, 1fr));
-    grid-template-columns: repeat(11, minmax(150px, 1fr));
+    grid-template-columns: repeat(10, minmax(150px, 1fr));
 
     &__tittle {
         grid-row: 1/2;
