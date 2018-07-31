@@ -26,7 +26,7 @@ export default class App extends Component {
   handleGenerate = function() {
     this.setState({ active: true })
     //Set the date we-re counting down to
-    var countDownDate = this.state.startDate.getTime();
+    var countDownDate = this.state.startDate.todate().getTime();
 
     //update date every second
     var x = setInterval(function(){
@@ -65,7 +65,7 @@ export default class App extends Component {
       ]
     }else{
       return[
-        <Picker callback={(date)=>this.handleChange(date)}/>,
+        <Picker startDate={this.state.startDate} callback={(date)=>this.handleChange(date)}/>,
         Button('Generate countdown', () => this.handleGenerate())
       ]
     }
