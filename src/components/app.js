@@ -4,6 +4,7 @@ import Button from './button';
 import Clock from'./clock';
 import changeDate from './changeDate';
 import largeText from './largeText';
+import moment from 'moment';
 
 export default class App extends Component {
 
@@ -11,7 +12,8 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      active: false
+      active: false,
+      startDate: moment
     }
   }
 
