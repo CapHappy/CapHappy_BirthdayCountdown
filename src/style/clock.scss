@@ -1,0 +1,41 @@
+.clock {
+    grid-row: 3/4;
+    grid-column: 2/11;
+    align-self: end;
+
+    background-color: $color-grey-one;
+    text-align: left;
+    height: 75%;
+
+    -webkit-clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+    clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 275px));
+    grid-column-gap: 80px;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+
+    &__box{
+        display:flex;
+        flex-direction: column;
+        margin-top: 24px;
+    }
+
+    &__tittle{
+        font-size: 22px;
+        line-height: 25px;
+        color: $color-yellow-one;
+        font-family: "Roboto Condended";
+    }
+    &__amount{
+        font-size: 90px;
+        font-weight: bold;
+        line-height: 115px;
+        color:white;
+        font-family: "Roboto Condended";
+    }
+}

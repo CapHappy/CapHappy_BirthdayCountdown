@@ -1,11 +1,11 @@
 import React from 'react';
 
-const button=()=>{
+const Button = (title, callback)=>{
     return(
-        <button className="button">
-            Generate Countdown
+        <button className="button" onclick={callback}>
+            {title}
         </button>
     )
 }
 
-export default button;
+export default Button;
