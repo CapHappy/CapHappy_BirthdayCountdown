@@ -10,10 +10,17 @@ export default class App extends Component {
 
   constructor(props) {
     super(props)
+    this.timer =0
 
     this.state = {
       active: false,
-      startDate: moment()
+      startDate: moment(),
+      timeRemaning: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      }
     }
   }
 
@@ -29,7 +36,7 @@ export default class App extends Component {
     var countDownDate = this.state.startDate.todate().getTime();
 
     //update date every second
-    var x = setInterval(function(){
+    this.timer = setInterval(function(){
 
       //get todays date and time
       var now =new Date().getTime();
@@ -45,20 +52,26 @@ export default class App extends Component {
 
       //output the result in an element with id="demo"
       const time = days + "d " + hours + "h " +minutes + "m " + seconds+ "s ";
-      console.log(time)
+      const timeRemaning = {
+        days,
+        hours,
+        minutes,
+        seconds
+      }
+      this.setState({ timeRemaning})
 
       //If the countdown is over, write some text
       if (distance < 0) {
-        clearTnterval(x);
+        clearTnterval(this.timer);
         // document.getElementById("demo").innerHTML = "EXPIRED";
       }
-    }, 1000);
+    }.bind(this), 1000);
   }.bind(this)
 
   renderItems(){
     if (this.state.active){
       return[
-        <Clock/>,
+          <Clock timeRemaning={this.state.timeRemaning}/>,
         changeDate('Change Date', ()=> this.setState({ active: false })),
         largeText('04/03'),
         <label className="grid__remaning">Remaining until your 21st birthday</label>
