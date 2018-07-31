@@ -25,6 +25,7 @@ export default class App extends Component {
   }
 
   handleChange =function(date) {
+    clearTnterval(this.timer);
     this.setState({
         startDate: date
     });
@@ -32,14 +33,35 @@ export default class App extends Component {
 
   handleGenerate = function() {
     this.setState({ active: true })
+
+    var bday = this.state.startDate.todate();
+    var today= new Date();
+    var currentMonth = today.getMonth();
+    var birthMonth = bday.getMonth();
+
+    if (birthMonth > currentMonth) {
+      bday.setFullYear(today.getFullYear())
+    }else if (birthMonth < currentMonth) {
+      bday.setFullYear(today.getFullYear()+1)
+    }else if (birthMonth == currentMonth) {
+      var currentDay = today.getDate();
+      var birthDay = bday.getDate();
+
+      if (birthDay>currentDay){
+        bday.setFullYear(today.getFullYear())
+      }else if (birthDay<=currentDay){
+        bday.setFullYear(today.getFullYear()+1)
+      }
+    }
+
     //Set the date we-re counting down to
-    var countDownDate = this.state.startDate.todate().getTime();
+    var countDownDate = bday.getTime();
 
     //update date every second
     this.timer = setInterval(function(){
 
       //get todays date and time
-      var now =new Date().getTime();
+      var now =today.getTime();
 
       //Find the distance between now an the count down date
       var distance = countDownDate - now;
