@@ -29,13 +29,13 @@
         font-size: 22px;
         line-height: 25px;
         color: $color-yellow-one;
-        font-family: "Roboto Condended";
+        font-family: $font-roboto;
     }
     &__amount{
         font-size: 90px;
         font-weight: bold;
         line-height: 115px;
         color:white;
-        font-family: "Roboto Condended";
+        font-family: $font-roboto;
     }
 }

@@ -6,13 +6,17 @@
     font-size: 22px;
     line-height: 19px;
     text-align: center;
-    font-family: "Roboto Condended";
+    font-family: $font-roboto;
     color: white;
     background-color: transparent;
     border:none;
     font-weight:100;
 
     transform: rotate(-73deg) translate(-70px, -70px);
+
+    &:focus{
+        outline: none;
+    }
 
     i {
         margin-right: 20px;

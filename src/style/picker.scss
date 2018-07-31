@@ -2,10 +2,11 @@
     grid-column: 5/10;
     grid-row: 2/3;
     font-size: 80px;
-    font-family: "roboto Condensed";
+    font-family: $font-roboto;
     font-weight: bold;
     padding-bottom:50px;
     color: $color-grey-one;
+    align-self: end;
 
     input{
         text-align: center;
