@@ -1,9 +1,11 @@
 import react from 'React';
 
-export default LargeText = (text)=>{
+const LargeText = (text)=>{
     return(
-        <div classname="large-text">
+        <div key={3} classname="large-text">
             {text}
         </div>
     )
 }
+
+export default LargeText;
